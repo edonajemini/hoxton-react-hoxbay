@@ -6,6 +6,8 @@ type Props = {
   decreaseProductQuantity: (product: StoreItemType) => void;
 };
 
+
+
 export function Basket({
   products,
   decreaseProductQuantity,
@@ -23,7 +25,6 @@ export function Basket({
     return `£ ${total.toFixed(2)}`;
   }
   const total = getTotal();
-
   return (
     <div className="basket-container">
       <h2>Your Basket </h2>
