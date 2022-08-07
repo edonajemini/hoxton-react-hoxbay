@@ -6,30 +6,30 @@ type Props = {
   decreaseProductQuantity: (product: StoreItemType) => void;
 };
 
-
-
 export function Basket({
   products,
   decreaseProductQuantity,
   increaseProductQuantity,
-}: Props) {
-  function getInBasketProducts() {
+}:
+ Props) {
+  function getBasketProducts() {
     return products.filter((product) => product.inBasket > 0);
   }
-  const inBasketProducts = getInBasketProducts();
+  const BasketProducts = getBasketProducts();
   function getTotal() {
     let total = 0;
-    for (let item of inBasketProducts) {
+    for (let item of BasketProducts) {
       total += item.price * item.inBasket;
     }
     return `£ ${total.toFixed(2)}`;
   }
   const total = getTotal();
+
   return (
     <div className="basket-container">
       <h2>Your Basket </h2>
       <ul>
-        {inBasketProducts.map((product) => (
+        {BasketProducts.map((product) => (
           <li>
             <Link to={`/productDetails${product.id}`}>
               <img src={product.image} alt="" />
