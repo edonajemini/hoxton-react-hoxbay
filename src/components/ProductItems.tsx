@@ -3,7 +3,7 @@ import { StoreItemType } from "../App";
 type Props = {
   product: StoreItemType;
 };
-export function HomeItems({ product }: Props) {
+export function ProductItems({ product }: Props) {
   const title = product.title;
   return (
     <Link to={`/productDetails${product.id}`}>

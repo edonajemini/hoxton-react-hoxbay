@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HomeItems } from "../components/HomeItems";
+import { ProductItems } from "../components/ProductItems";
 
 type Props = {
   search: string;
@@ -19,7 +19,7 @@ export function Products({ search }: Props) {
   return (
     <ul className="products-container__list">
       {filteredProducts.map((product) => (
-        <HomeItems product={product} />
+        <ProductItems product={product} />
       ))}
     </ul>
   );
