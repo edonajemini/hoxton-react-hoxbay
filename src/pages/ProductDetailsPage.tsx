@@ -15,12 +15,18 @@ export function ProductDetailsPage({ increaseProductQuantity }: Props) {
       .then((productFromServer) => setProduct(productFromServer));
   }, []);
 
+  if (product === null)
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  if (product.id === undefined) return <Navigate to="/home" />;
+
   return (
     <ul>
       <li className="product-detail">
         <img src={product.image} alt={product.name} />
-
-        
         <div className="product-detail__side">
           <h2>{product.title}</h2>
           <p>{product.description}</p>
