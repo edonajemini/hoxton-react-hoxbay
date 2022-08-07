@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import { Basket } from "./pages/Basket";
 import { Categories } from "./pages/Categories";
 import { Products } from "./pages/Products";
-import { NotFound } from "./pages/NotFound";
 import { ProductDetailsPage } from "./pages/ProductDetailsPage";
 
 export type StoreItemType = {
@@ -52,7 +51,6 @@ function App() {
             <Route index element={<Navigate to="/home" />} />
             <Route path="home" element={<Products search={search} />} />
             <Route path="categories" element={<Categories />} />
-            <Route path="*" element={< NotFound />} />
             <Route
               path="/productDetails:id"
               element={

@@ -138,6 +138,9 @@ img {
   font-weight: 400;
 }
 
+.not-found {
+  justify-content: center;
+}
 /* Product Detail */
 .product-detail {
   display: grid;
